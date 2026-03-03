@@ -179,11 +179,11 @@ def create_cover_sheet(wb: Workbook, system_name: str, df: pd.DataFrame, scan_da
         ws.row_dimensions[row_idx].height = 20
 
         # Color code the severity count rows
-        if "CAT I" in label:
+        if "(High)" in label:
             value_cell.fill = FILL_COLORS["high"]
-        elif "CAT II" in label:
+        elif "(Medium)" in label:
             value_cell.fill = FILL_COLORS["medium"]
-        elif "CAT III" in label:
+        elif "(Low)" in label:
             value_cell.fill = FILL_COLORS["low"]
 
 
@@ -207,7 +207,8 @@ def create_findings_sheet(wb: Workbook, df: pd.DataFrame):
     # Write data rows
     for row_idx, row in enumerate(df.itertuples(index=False), start=2):
         severity = row.severity.lower()
-        fill     = FILL_COLORS.get(severity, PatternFill())
+
+
 
         row_data = [
             row.weakness_id,
@@ -225,11 +226,18 @@ def create_findings_sheet(wb: Workbook, df: pd.DataFrame):
         ]
 
         for col_idx, value in enumerate(row_data, start=1):
-            cell           = ws.cell(row=row_idx, column=col_idx, value=value)
-            cell.fill      = fill
+            cell = ws.cell(row=row_idx, column=col_idx, value=value)
+
+            # Apply color only to Category (col 10) and Severity (col 11)
+            if col_idx in (10, 11):
+                cell.fill = FILL_COLORS.get(severity, PatternFill())
+            else:
+                cell.fill = PatternFill()
+
             cell.font      = NORMAL_FONT
             cell.border    = THIN_BORDER
             cell.alignment = Alignment(vertical="center", wrap_text=True)
+
 
         ws.row_dimensions[row_idx].height = 30
 
