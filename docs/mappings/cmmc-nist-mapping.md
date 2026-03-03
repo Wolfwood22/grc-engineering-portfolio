@@ -5,9 +5,6 @@
 **Version:** 1.0
 
 > CMMC Level 2 is a direct 1:1 overlay of all 110 NIST 800-171 Rev 2 requirements.
-> There is no practice in CMMC Level 2 that does not have a corresponding 800-171 requirement.
-> The distinction is enforcement mechanism (C3PAO assessment vs. self-attestation) and scoping
-> rigor, not control content.
 
 ---
 
