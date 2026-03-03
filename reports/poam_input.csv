@@ -1,0 +1,5 @@
+rule_id,severity,category,title
+SV-257777r925318_rule,high,CAT I,RHEL 9 must be configured so that the root account is not used for direct login.
+SV-257778r925319_rule,medium,CAT II,RHEL 9 must display the Standard Mandatory DoD Notice before granting access.
+SV-257779r925320_rule,medium,CAT II,RHEL 9 must enforce password complexity requirements.
+SV-257780r925321_rule,low,CAT III,RHEL 9 must send audit records to a different system or media than the system being audited.
