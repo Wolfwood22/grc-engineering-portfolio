@@ -1,6 +1,6 @@
 # CMMC Level 2 → NIST 800-171 Rev 2 → NIST 800-53 Rev 5 Master Mapping
 
-**Author:** GRC Engineering Portfolio
+**Author:** Shayl Taveras
 **Date:** 2026-03-03
 **Version:** 1.0
 
